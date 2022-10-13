@@ -11,12 +11,9 @@ class trooper extends Model
 
     public $id;
     public $name;
-    public $
-    public $
-    public $
-
-
+    public $faction;
+    public $era;
+    public $rank;
+    public $legion;
 }
-
-
 ?>

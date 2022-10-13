@@ -17,10 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', function () {
+    return view('home');
+});
+
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'show'])->name('welcome');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'show'])->name('home');
 
+Route::view('/post', 'post')->name('post')->middleware(['auth']);
 
 Route::get('/about', function () {
     return view('about');

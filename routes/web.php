@@ -21,12 +21,19 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'show'])->name('home');
-
-Route::view('/post', 'post')->name('post')->middleware(['auth']);
-
 Route::get('/about', function () {
     return view('about');
 });
+
+Route::get('/index', function () {
+    return view('index');
+});
+
+Auth::routes();
+
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'show'])->name('home');
+
+Route::view('/post', 'post')->name('post')->middleware(['auth']);
+
+Route::view('/create', 'create')->name('create')->middleware(['auth']);
+

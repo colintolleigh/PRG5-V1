@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class trooper extends Model {
     use HasFactory;
 
-   protected $fillable = ['name',
+   protected $fillable =
+       ['name',
        'faction',
        'era',
        'rank',
        'legion'];
-
 
 //    public $id;
 //    public $name;

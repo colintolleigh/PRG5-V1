@@ -29,6 +29,8 @@ Route::get('/index', function () {
     return view('index');
 });
 
+Route::resource('troopers', TrooperController::class);
+
 Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'show'])->name('home');

@@ -14,13 +14,5 @@ class trooper extends Model {
        'era',
        'rank',
        'legion'];
-
-//    public $id;
-//    public $name;
-//    public $faction;
-//    public $era;
-//    public $rank;
-//    public $legion;
 }
 
-?>

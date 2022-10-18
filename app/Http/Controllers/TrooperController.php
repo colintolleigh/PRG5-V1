@@ -14,7 +14,10 @@ class TrooperController extends Controller
      */
     public function index()
     {
-        //
+        $troopers = trooper::latest()->paginate(5);
+
+        return view('index',compact('troopers'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -43,10 +46,10 @@ class TrooperController extends Controller
             'legion' => 'required',
         ]);
 
-        Product::create($request->all());
+        trooper::create($request->all());
 
         return redirect()->route('index')
-            ->with('success','Trooper aangemaakt.');
+            ->with('success','Trooper created.');
     }
 
     /**
@@ -57,7 +60,7 @@ class TrooperController extends Controller
      */
     public function show(trooper $trooper)
     {
-
+        return view('troopers.show',compact('trooper'));
     }
 
     /**
@@ -68,7 +71,7 @@ class TrooperController extends Controller
      */
     public function edit(trooper $trooper)
     {
-        //
+        return view('troopers.edit',compact('trooper'));
     }
 
     /**
@@ -80,7 +83,18 @@ class TrooperController extends Controller
      */
     public function update(Request $request, trooper $trooper)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'faction' => 'required',
+            'era' => 'required',
+            'rank' => 'required',
+            'legion' => 'required',
+        ]);
+
+        $trooper->update($request->all());
+
+        return redirect()->route('index')
+            ->with('success','Trooper updated');
     }
 
     /**
@@ -91,6 +105,9 @@ class TrooperController extends Controller
      */
     public function destroy(trooper $trooper)
     {
-        //
+        $trooper->delete();
+
+        return redirect()->route('index')
+            ->with('success','Trooper deleted');
     }
 }

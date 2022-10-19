@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TrooperController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,9 +26,13 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/index', function () {
-    return view('index');
-});
+//Route::get('/troopers', function () {
+//    return view('troopers.index');
+//});
+
+//Route::get('/index', function () {
+//    return view('index');
+//});
 
 Route::resource('troopers', TrooperController::class);
 
@@ -35,7 +40,9 @@ Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'show'])->name('home');
 
-Route::view('/post', 'post')->name('post')->middleware(['auth']);
+//Route::view('/troopers', 'troopers.index')->name('troopers')->middleware(['auth']);
 
-Route::view('/create', 'create')->name('create')->middleware(['auth']);
+//Route::view('/post', 'post')->name('post')->middleware(['auth']);
+
+Route::view('/create', 'troopers.create')->name('create')->middleware(['auth']);
 

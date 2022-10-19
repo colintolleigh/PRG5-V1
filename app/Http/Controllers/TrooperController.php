@@ -16,7 +16,7 @@ class TrooperController extends Controller
     {
         $troopers = trooper::latest()->paginate(5);
 
-        return view('index',compact('troopers'))
+        return view('troopers.index',compact('troopers'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -27,7 +27,7 @@ class TrooperController extends Controller
      */
     public function create()
     {
-        return view('create');
+        return view('troopers.create');
     }
 
     /**
@@ -48,7 +48,7 @@ class TrooperController extends Controller
 
         trooper::create($request->all());
 
-        return redirect()->route('index')
+        return redirect()->route('troopers.index')
             ->with('success','Trooper created.');
     }
 
@@ -93,7 +93,7 @@ class TrooperController extends Controller
 
         $trooper->update($request->all());
 
-        return redirect()->route('index')
+        return redirect()->route('troopers.index')
             ->with('success','Trooper updated');
     }
 
@@ -107,7 +107,7 @@ class TrooperController extends Controller
     {
         $trooper->delete();
 
-        return redirect()->route('index')
+        return redirect()->route('troopers.index')
             ->with('success','Trooper deleted');
     }
 }

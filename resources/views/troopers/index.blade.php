@@ -11,14 +11,13 @@
 
     <div class="row">
         <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Troopers</h2>
-            </div>
+
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('create') }}"> Create New Trooper</a>
+                <a class="btn btn-success" href="{{ route('troopers.create') }}"> Create New Trooper</a>
             </div>
         </div>
     </div>
+    <br>
 
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
@@ -30,20 +29,26 @@
         <tr>
             <th>No</th>
             <th>Name</th>
-            <th>Details</th>
+            <th>Faction</th>
+            <th>Era</th>
+            <th>Rank</th>
+            <th>Legion</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($troopers as $trooper)
             <tr>
                 <td>{{ ++$i }}</td>
                 <td>{{ $trooper->name }}</td>
-                <td>{{ $trooper->detail }}</td>
+                <td>{{ $trooper->faction }}</td>
+                <td>{{ $trooper->era }}</td>
+                <td>{{ $trooper->rank }}</td>
+                <td>{{ $trooper->legion }}</td>
                 <td>
-                    <form action="{{ route('products.destroy',$trooper->id) }}" method="POST">
+                    <form action="{{ route('troopers.destroy',$trooper->id) }}" method="POST">
 
-                        <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
+                        <a class="btn btn-info" href="{{ route('troopers.show',$trooper->id) }}">Show</a>
 
-                        <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>
+                        <a class="btn btn-primary" href="{{ route('troopers.edit',$trooper->id) }}">Edit</a>
 
                         @csrf
                         @method('DELETE')
@@ -55,7 +60,6 @@
         @endforeach
     </table>
 
-    {!! $products->links() !!}
-
+    {!! $troopers->links() !!}
 
 @endsection

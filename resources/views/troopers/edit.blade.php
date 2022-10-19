@@ -42,19 +42,19 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Era:</strong>
-                        <textarea class="form-control"  name="era" placeholder="Era"></textarea>
+                        <input type="text" class="form-control"  name="era" placeholder="Era">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Rank:</strong>
-                        <textarea class="form-control" name="rank" placeholder="Rank"></textarea>
+                        <input type="text" class="form-control" name="rank" placeholder="Rank">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Legion:</strong>
-                        <textarea class="form-control" name="legion" placeholder="Legion"></textarea>
+                        <input type="number" class="form-control" name="legion" placeholder="Legion">
                     </div>
                 </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

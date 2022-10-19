@@ -36,25 +36,25 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Faction:</strong>
-                        <input type="text" name="faction" class="form-control" placeholder="Faction">
+                        <input type="text" name="faction" value="{{ $trooper->faction }}" class="form-control" placeholder="Faction">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Era:</strong>
-                        <input type="text" class="form-control"  name="era" placeholder="Era">
+                        <input type="number" class="form-control" name="era" value="{{ $trooper->era }}" placeholder="Era">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Rank:</strong>
-                        <input type="text" class="form-control" name="rank" placeholder="Rank">
+                        <input type="number" class="form-control" name="rank" value="{{ $trooper->rank }}" placeholder="Rank">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Legion:</strong>
-                        <input type="number" class="form-control" name="legion" placeholder="Legion">
+                        <input type="number" class="form-control" name="legion" value="{{ $trooper->legion }}" placeholder="Legion">
                     </div>
                 </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

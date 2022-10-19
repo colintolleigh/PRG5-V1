@@ -31,8 +31,8 @@
             <th>Name</th>
             <th>Faction</th>
             <th>Era</th>
-            <th>Rank</th>
-            <th>Legion</th>
+{{--            <th>Rank</th>--}}
+{{--            <th>Legion</th>--}}
             <th width="280px">Action</th>
         </tr>
         @foreach ($troopers as $trooper)
@@ -41,12 +41,12 @@
                 <td>{{ $trooper->name }}</td>
                 <td>{{ $trooper->faction }}</td>
                 <td>{{ $trooper->era }}</td>
-                <td>{{ $trooper->rank }}</td>
-                <td>{{ $trooper->legion }}</td>
+{{--                <td>{{ $trooper->rank }}</td>--}}
+{{--                <td>{{ $trooper->legion }}</td>--}}
                 <td>
                     <form action="{{ route('troopers.destroy',$trooper->id) }}" method="POST">
 
-                        <a class="btn btn-info" href="{{ route('troopers.show',$trooper->id) }}">Show</a>
+                        <a class="btn btn-info" href="{{ route('troopers.show',$trooper->id) }}">Details</a>
 
                         <a class="btn btn-primary" href="{{ route('troopers.edit',$trooper->id) }}">Edit</a>
 

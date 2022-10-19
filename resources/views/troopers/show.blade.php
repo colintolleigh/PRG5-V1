@@ -19,10 +19,32 @@
                 {{ $trooper->name }}
             </div>
         </div>
+        <br>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Details:</strong>
-                {{ $trooper->detail }}
+                <strong>Faction:</strong>
+                {{ $trooper->faction }}
+            </div>
+        </div>
+        <br>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Era:</strong>
+                {{ $trooper->era }}
+            </div>
+        </div>
+        <br>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Rank:</strong>
+                {{ $trooper->rank }}
+            </div>
+        </div>
+        <br>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Legion:</strong>
+                {{ $trooper->legion }}
             </div>
         </div>
     </div>

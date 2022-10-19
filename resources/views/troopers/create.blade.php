@@ -36,28 +36,28 @@
                     <input type="text" name="name" class="form-control" placeholder="Name">
                 </div>
             </div>
-            <br><br>
+            <br>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Faction:</strong>
                     <input type="text" name="faction" class="form-control" placeholder="Faction">
                 </div>
             </div>
-            <br><br>
+            <br>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Era:</strong>
-                    <input type="text" class="form-control"  name="era" placeholder="Era">
+                    <input type="number" class="form-control"  name="era" placeholder="Era">
                 </div>
             </div>
-            <br><br>
+            <br>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Rank:</strong>
-                    <input type= "text" class="form-control" name="rank" placeholder="Rank">
+                    <input type= "number" class="form-control" name="rank" placeholder="Rank">
                 </div>
             </div>
-            <br><br>
+            <br>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Legion:</strong>
@@ -69,6 +69,5 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>
-
     </form>
 @endsection

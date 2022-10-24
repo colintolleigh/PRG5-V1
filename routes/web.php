@@ -52,7 +52,7 @@ Auth::routes();
 
 //Route::view('/post', 'post')->name('post')->middleware(['auth']);
 
-Route::view('/troopers', 'troopers.index')->name('troopers.index')->middleware(['auth']);
+//Route::view('/troopers', 'troopers.index')->name('troopers.index')->middleware(['auth']);
 
 Route::view('/troopers/create', 'troopers.create')->name('troopers.create')->middleware(['auth']);
 

@@ -20,6 +20,11 @@ class TrooperController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
+    public function __construct()
+    {
+        $this->middleware('auth')->except('troopers.index');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -43,8 +48,19 @@ class TrooperController extends Controller
             'faction' => 'required',
             'era' => 'required',
             'rank' => 'required',
-            'legion' => 'required',
+            'legion' => ['required', 'numeric']
         ]);
+
+        if ($request->hasFile('file_path')) {
+            $request->validate([
+               'image' => 'mimes:jpeg,bmp,png'
+            ]);
+
+            $request->file('file_path')->storePublicly('file_path', 'public');
+
+
+
+        }
 
         trooper::create($request->all());
 

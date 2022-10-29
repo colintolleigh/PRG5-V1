@@ -38,6 +38,10 @@ Route::get('/troopers/create', function () {
     return view('troopers.create');
 });
 
+Route::get('/collection', function () {
+    return view('collection');
+});
+
 Route::get('/troopers/edit', function () {
     return view('troopers.edit');
 });

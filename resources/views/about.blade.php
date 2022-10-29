@@ -1,10 +1,12 @@
 @extends('layouts.app')
 @section('content')
-<h1>
-    About Us
-</h1>
+    <div class="container">
+        <h1>
+            About Us
+        </h1>
 
-    <p>
-        Hier vind je alles over ons.
-    </p>
+        <p>
+            Hier vind je alles over ons.
+        </p>
+    </div>
 @endsection

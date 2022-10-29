@@ -26,6 +26,10 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/profile', function () {
+    return view('profile');
+});
+
 Route::get('/troopers', function () {
     return view('troopers.index');
 });
@@ -59,6 +63,9 @@ Route::view('/troopers/create', 'troopers.create')->name('troopers.create')->mid
 Route::view('/troopers/edit', 'troopers.edit')->name('troopers.edit')->middleware(['auth']);
 
 Route::view('/troopers/show', 'troopers.show')->name('troopers.show')->middleware(['auth']);
+
+Route::view('/profile', 'profile')->name('profile')->middleware(['auth']);
+
 
 
 

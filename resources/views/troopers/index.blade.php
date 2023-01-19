@@ -2,13 +2,10 @@
 
 @section('content')
     <div class="container">
-        <h1>
-            Troopers
-        </h1>
-
-        <p>
+        <h4>
             Down below you can find every trooper.
-        </p>
+        </h4>
+        <br>
 
         <div class="row">
             <div class="col-lg-12 margin-tb">
@@ -45,11 +42,11 @@
                     {{--                <td>{{ $trooper->rank }}</td>--}}
                     {{--                <td>{{ $trooper->legion }}</td>--}}
                     <td>
-                        <form action="{{ route('troopers.destroy',$trooper->id) }}" method="POST">
+                        <form action="{{ route('troopers.destroy', $trooper->id) }}" method="POST">
 
-                            <a class="btn btn-info" href="{{ route('troopers.show',$trooper->id) }}">Details</a>
+                            <a class="btn btn-info" href="/troopers/{{ $trooper->id }}">Details</a>
 
-                            <a class="btn btn-primary" href="{{ route('troopers.edit',$trooper->id) }}">Edit</a>
+                            <a class="btn btn-primary" href="{{ route('troopers.edit', $trooper->id) }}">Edit</a>
 
                             @csrf
                             @method('DELETE')

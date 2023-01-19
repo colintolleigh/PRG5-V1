@@ -24,6 +24,18 @@
                             <span>{{$message}}</span>
                             @enderror
                     </div>
+                    <div class="mb-3">
+                            <label for="email" >E-mail</label>
+                            <span class="alert-danger"></span>
+                            <input id="email"
+                                   type="email"
+                                   name="email"
+                                   class="form-control"
+                                   value="{{old('email')}}" />
+                            @error('email')
+                            <span>{{$message}}</span>
+                            @enderror
+                        </div>
                 </div>
             </div>
         </form>

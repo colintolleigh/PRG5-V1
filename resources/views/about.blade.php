@@ -6,7 +6,7 @@
         </h1>
 
         <p>
-            Hier vind je alles over ons.
+            Here you can read everything about us.
         </p>
     </div>
 @endsection

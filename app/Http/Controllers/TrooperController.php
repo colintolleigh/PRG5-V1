@@ -76,7 +76,7 @@ class TrooperController extends Controller
      */
     public function show(trooper $trooper)
     {
-        return view('troopers.show',compact('trooper'));
+        return view('troopers.adminshow',compact('trooper'));
     }
 
     /**

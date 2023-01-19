@@ -10,9 +10,12 @@ class trooper extends Model {
 
    protected $fillable =
        ['name',
+        'user_id',
        'faction',
        'era',
        'rank',
-       'legion'];
+       'legion',
+       'thumbnail',
+       'description'];
 }
 

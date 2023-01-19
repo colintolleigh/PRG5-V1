@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\TrooperController;
 use Illuminate\Support\Facades\Route;
+use App\Models\trooper;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,22 +40,23 @@ Route::get('/troopers/create', function () {
 });
 
 Route::get('/collection', function () {
-    return view('collection');
+    return view('collection', [
+        'troopers' => trooper::all()
+    ]);
 });
 
 Route::get('/troopers/edit', function () {
     return view('troopers.edit');
 });
 
-Route::get('/troopers/show', function () {
-    return view('troopers.show');
+Route::get('/troopers/adminshow', function () {
+    return view('troopers.adminshow');
 });
 
 Route::resource('troopers', TrooperController::class);
 
 Auth::routes();
 
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'show'])->name('home');
 
 //Route::view('/troopers', 'troopers.index')->name('troopers')->middleware(['auth']);
 
@@ -66,7 +68,7 @@ Route::view('/troopers/create', 'troopers.create')->name('troopers.create')->mid
 
 Route::view('/troopers/edit', 'troopers.edit')->name('troopers.edit')->middleware(['auth']);
 
-Route::view('/troopers/show', 'troopers.show')->name('troopers.show')->middleware(['auth']);
+Route::view('/troopers/adminshow', 'troopers.adminshow')->name('troopers.adminshow')->middleware(['auth']);
 
 Route::view('/profile', 'profile')->name('profile')->middleware(['auth']);
 
